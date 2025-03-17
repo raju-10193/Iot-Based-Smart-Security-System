@@ -1,100 +1,119 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 [![Python 3.x](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
-## Overview
+Overview
 
-This project implements an IoT-based smart security system using a Raspberry Pi, PiCamera, and AI-powered face recognition. [cite: 2, 3, 4] The system enhances security by:
+This project implements an IoT-based smart security system using a Raspberry Pi, PiCamera, and AI-powered face recognition. The system enhances security by:
 
-* Detecting and recognizing faces. [cite: 14]
-* Estimating the age and gender of detected individuals. [cite: 14]
-* Identifying unauthorized individuals ("Imposters"). [cite: 15]
-* Providing real-time alerts through buzzer activation and email notifications. [cite: 15]
+Detecting and recognizing faces.
 
-This system is suitable for home security, office access control, and other applications requiring enhanced surveillance. [cite: 7]
+Estimating the age and gender of detected individuals.
 
-## Features
+Identifying unauthorized individuals ("Imposters").
 
-* **Face Recognition:** Identifies known individuals from a database of faces. [cite: 14, 18]
-* **Age and Gender Detection:** Estimates the age and gender of detected faces using deep learning. [cite: 14, 17]
-* **Imposter Detection:** Flags unknown individuals as imposters. [cite: 15]
-* **Real-time Alerts:**
-    * Buzzer activation upon imposter detection. [cite: 9, 15]
-    * Email notifications with attached image of the detected person. [cite: 12, 15, 19]
-* **Modular Code Design:** Well-structured and documented Python code for easy maintenance and extension.
-* **Known Person's Friend Identification**: If a known person is detected, unknown faces are labeled as their friend.
+Providing real-time alerts through buzzer activation and email notifications.
 
-## Hardware Components
+This system is suitable for home security, office access control, and other applications requiring enhanced surveillance.
 
-* Raspberry Pi (e.g., Raspberry Pi 4) [cite: 8]
-* PiCamera [cite: 8]
-* Buzzer [cite: 9]
-* GPIO Modules (for buzzer control) [cite: 9]
+Features
 
-## Software Components
+Face Recognition: Identifies known individuals from a database of faces.
 
-* Python 3.x [cite: 10]
-* OpenCV (cv2) [cite: 10]
-* face\_recognition library [cite: 11, 18]
-* Deep Learning Models (Caffe) for Age and Gender Detection [cite: 11]
-* RPi.GPIO
-* smtplib, ssl, email (for email functionality) [cite: 12]
-* matplotlib (for displaying the processed image)
+Age and Gender Detection: Estimates the age and gender of detected faces using deep learning.
 
-## Installation
+Imposter Detection: Flags unknown individuals as imposters.
 
-1.  **Clone the repository:**
+Real-time Alerts:
 
-    ```bash
-    git clone <https://github.com/raju-10193/Iot-Face-Recognition-Security>
-    ```
+Buzzer activation upon imposter detection.
 
-2.  **Navigate to the project directory:**
+Email notifications with attached image of the detected person.
 
-    ```bash
-    cd iot-security-system
-    ```
+Modular Code Design: Well-structured and documented Python code for easy maintenance and extension.
 
-3.  **Install the dependencies:**
+Known Person's Friend Identification: If a known person is detected, unknown faces are labeled as their friend.
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+Hardware Components
 
-4.  **Download Pre-trained Models:**
+Raspberry Pi (e.g., Raspberry Pi 4)
 
-    * Download the pre-trained Caffe models for age and gender detection and place them in the `models/` directory.  
-        * You can find suitable models at the provided link in the document [cite: 36] or search for alternatives.
-    * Ensure the paths in the code (`AGE_PROTO`, `AGE_MODEL`, `GENDER_PROTO`, `GENDER_MODEL`) point to the correct locations of your model files.
+PiCamera
 
-5.  **Prepare Known Faces:**
+Buzzer
 
-    * Place images of known individuals in the `known_faces/` directory.
-    * Name the image files with the names of the individuals (e.g., `john_doe.jpg`). [cite: 40]
+GPIO Modules (for buzzer control)
 
-6.  **Configure Email Settings:**
+Software Components
 
-    * In the main Python script, update the following variables with your email credentials:
-        * `SENDER_EMAIL`
-        * `RECEIVER_EMAIL`
-        * `EMAIL_PASSWORD` (Use an app password if you have 2-Step Verification enabled for your Gmail account.)
+Python 3.x
 
-7.  **Hardware Setup:**
+OpenCV (cv2)
 
-    * Connect the PiCamera and buzzer to your Raspberry Pi according to the appropriate GPIO pinout.
-    * Modify the `BUZZER_PIN` variable in the code to match the GPIO pin you are using.
+face_recognition library
 
-## Usage
+Deep Learning Models (Caffe) for Age and Gender Detection
 
-1.  **Ensure all hardware components are connected correctly.**
-2.  **Verify that the required software (Python, OpenCV, etc.) is installed on your Raspberry Pi.**
-3.  **Run the main script:**
+RPi.GPIO
 
-    ```bash
-    python code/main.py
-    ```
+smtplib, ssl, email (for email functionality)
 
-4.  The system will capture an image, detect faces, predict age and gender, and provide alerts if an imposter is detected.
+matplotlib (for displaying the processed image)
 
-## Project Structure
+Installation
+
+Clone the repository:
+
+git clone https://github.com/raju-10193/Iot-Face-Recognition-Security.git
+
+Navigate to the project directory:
+
+cd iot-security-system
+
+Install the dependencies:
+
+pip install -r requirements.txt
+
+Download Pre-trained Models:
+
+Download the pre-trained Caffe models for age and gender detection and place them in the models/ directory.
+
+Ensure the paths in the code (AGE_PROTO, AGE_MODEL, GENDER_PROTO, GENDER_MODEL) point to the correct locations of your model files.
+
+Prepare Known Faces:
+
+Place images of known individuals in the known_faces/ directory.
+
+Name the image files with the names of the individuals (e.g., john_doe.jpg).
+
+Configure Email Settings:
+
+In the main Python script, update the following variables with your email credentials:
+
+SENDER_EMAIL
+
+RECEIVER_EMAIL
+
+EMAIL_PASSWORD (Use an app password if you have 2-Step Verification enabled for your Gmail account.)
+
+Hardware Setup:
+
+Connect the PiCamera and buzzer to your Raspberry Pi according to the appropriate GPIO pinout.
+
+Modify the BUZZER_PIN variable in the code to match the GPIO pin you are using.
+
+Usage
+
+Ensure all hardware components are connected correctly.
+
+Verify that the required software (Python, OpenCV, etc.) is installed on your Raspberry Pi.
+
+Run the main script:
+
+python code/main.py
+
+The system will capture an image, detect faces, predict age and gender, and provide alerts if an imposter is detected.
+
+Project Structure
+
 iot-security-system/
 ├── code/
 │   ├── main.py           # Main script
@@ -112,40 +131,56 @@ iot-security-system/
 │   └── project_report.pdf  # (Optional) Project documentation
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project overview and instructions
-## Results
+
+Results
 
 The system has been tested to successfully:
 
-* Recognize known faces with reasonable accuracy. [cite: 20, 25, 26, 27]
-* Detect imposters and trigger alerts (buzzer and email). [cite: 22, 26]
-* Estimate age and gender with acceptable accuracy. [cite: 21, 27]
+Recognize known faces with reasonable accuracy.
 
-**_Note:_** Face recognition accuracy may vary depending on lighting conditions, image resolution, and the quality of images in the `known_faces/` directory. [cite: 28]
+Detect imposters and trigger alerts (buzzer and email).
 
-## Future Work
+Estimate age and gender with acceptable accuracy.
 
-* **Enhance Face Recognition Accuracy:** Implement techniques to improve face recognition under different lighting and angle variations. [cite: 29, 32]
-* **Cloud Integration:** Store captured images, logs, and recognized face data in a cloud database for remote access and scalability. [cite: 33]
-* **Mobile App Integration:** Develop a mobile application to provide real-time notifications and remote monitoring capabilities. [cite: 34]
-* **Additional Biometrics:** Integrate other biometric authentication methods such as voice recognition or fingerprint recognition for multi-factor authentication. [cite: 35]
-* **Optimize Performance:** Improve the system's processing speed and efficiency for real-time applications.
+Note: Face recognition accuracy may vary depending on lighting conditions, image resolution, and the quality of images in the known_faces/ directory.
 
-## Author
+Future Work
 
-* Raju Raccha
+Enhance Face Recognition Accuracy: Implement techniques to improve face recognition under different lighting and angle variations.
 
-## License
+Cloud Integration: Store captured images, logs, and recognized face data in a cloud database for remote access and scalability.
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Mobile App Integration: Develop a mobile application to provide real-time notifications and remote monitoring capabilities.
 
-## Acknowledgments
+Additional Biometrics: Integrate other biometric authentication methods such as voice recognition or fingerprint recognition for multi-factor authentication.
 
-* OpenCV documentation: [https://opencv.org](https://opencv.org) [cite: 36]
-* Face Recognition library: [https://github.com/ageitgey/face\_recognition](https://github.com/ageitgey/face_recognition) [cite: 36]
-* Raspberry Pi official site: [https://www.raspberrypi.org](https://www.raspberrypi.org) [cite: 36]
-* Caffe model for age and gender prediction: [https://github.com/tringn/AgeGenderPrediction](https://github.com/tringn/AgeGenderPrediction) [cite: 36] (or other sources for models)
-* Dlib Face Recognition Library - [http://dlib.net/](http://dlib.net/) [cite: 36]
-* Email Automation with Python (smtplib) - [https://docs.python.org/3/library/smtplib.html](https://docs.python.org/3/library/smtplib.html) [cite: 36]
-* Raspberry Pi GPIO Library Documentation - [https://gpiozero.readthedocs.io/en/stable/](https://gpiozero.readthedocs.io/en/stable/) [cite: 36]
-* Face Detection with Deep Learning (MTCNN) - [https://github.com/ipazc/mtcnn](https://github.com/ipazc/mtcnn) [cite: 36]
+Optimize Performance: Improve the system's processing speed and efficiency for real-time applications.
+
+Author
+
+Raju Raccha
+
+License
+
+This project is licensed under the MIT License.
+
+Acknowledgments
+
+OpenCV documentation: https://opencv.org
+
+Face Recognition library: https://github.com/ageitgey/face_recognition
+
+Raspberry Pi official site: https://www.raspberrypi.org
+
+Caffe model for age and gender prediction: https://github.com/tringn/AgeGenderPrediction
+
+Dlib Face Recognition Library - http://dlib.net/
+
+Email Automation with Python (smtplib) - https://docs.python.org/3/library/smtplib.html
+
+Raspberry Pi GPIO Library Documentation - https://gpiozero.readthedocs.io/en/stable/
+
+Face Detection with Deep Learning (MTCNN) - https://github.com/ipazc/mtcnn
+
 └── .gitignore            # Specifies intentionally untracked files
+
