@@ -1,0 +1,10 @@
+INSTALL ALL THE PACKAGES
+1.cv2
+2.numpy
+3.face_recognition
+4.picamera
+5.RPi.GPIO
+6.smtplib
+7.ssl
+8.email
+9.matplotlib
