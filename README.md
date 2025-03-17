@@ -44,7 +44,7 @@ This system is suitable for home security, office access control, and other appl
 1.  **Clone the repository:**
 
     ```bash
-    git clone <your_repository_url>
+    git clone <https://github.com/raju-10193/Iot-Face-Recognition-Security>
     ```
 
 2.  **Navigate to the project directory:**
