@@ -98,23 +98,41 @@ This system is well-suited for applications such as home security, office access
 
 ##   Project Structure
 iot-security-system/
+
 ├── code/
-│   ├── main.py                # Main script
+
+│   ├── main.py  # Main script
+
 │   ├── ...                    # Other Python modules (if any)
+
 ├── models/
+
 │   ├── deploy_age.prototxt      # Age detection model
+
 │   ├── age_net.caffemodel       # Age detection model
+
 │   ├── deploy_gender.prototxt   # Gender detection model
+
 │   ├── gender_net.caffemodel    # Gender detection model
+
 ├── known_faces/
+
 │   ├── person1.jpg            # Images of known individuals
+
 │   ├── person2.jpg
+
 │   ├── ...
+
 ├── docs/
+
 │   └── project_report.pdf     # (Optional) Project documentation
+
 ├── requirements.txt           # Python dependencies
+
 └── README.md                  # Project overview and instructions
+
 └── .gitignore                 # Specifies intentionally untracked files
+
 ##   Results
 
 The system has undergone testing and successfully demonstrates the ability to:
